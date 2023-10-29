@@ -5,5 +5,4 @@ set(CMAKE_C_STANDARD 11)
 
 include_directories(.)
 
-add_executable(my_university_c
-        Algebra_det_search.c)
+add_executable(StartFile.c StartFile.c Vectors.c Matrix_det_gauss.c)

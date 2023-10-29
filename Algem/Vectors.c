@@ -1,10 +1,10 @@
 //
 // Created by Egor Kapov on 30.10.2023.
 //
-
 #include <stdio.h>
+#include "func.h"
 
-int main() {
+int Vectors() {
     double a1, a2, a3,
             b1, b2, b3,
             c1, c2, c3;
@@ -36,4 +36,5 @@ int main() {
             printf("%.2lf %.2lf %.2lf\n", a1, a2, a3);
             printf("%.2lf %.2lf %.2lf\n", c1, c2, c3);
         }
+    return 0;
 }

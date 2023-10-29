@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 
-int main() {
+int Matrix_det_gauss() {
     float arr[200][200], det = 0, reserv_stroka[200];
     int size = 0, flag = 0, naturale_stroka = 0;
     scanf("%d", &size);
