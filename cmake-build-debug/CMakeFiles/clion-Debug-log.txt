@@ -1,1 +1,0 @@
-CMakeLists.txt not found in /Users/555tery/CLionProjects/my_university_c Select CMakeLists.txt
