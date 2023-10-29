@@ -5,5 +5,6 @@
 #include "stdio.h"
 
 int main(){
-    Matrix_det_gauss()
+    Matrix_det_gauss();
+    //Vectors();
 }
