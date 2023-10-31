@@ -2,7 +2,6 @@
 // Created by Egor Kapov on 30.10.2023.
 //
 #include <stdio.h>
-#include "func.h"
 
 int Vectors() {
     double a1, a2, a3,

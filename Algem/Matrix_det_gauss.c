@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int Matrix_det_gauss.c() {
+int Matrix_det_gauss() {
     float arr[200][200];
     int size = 0;
     scanf("%d", &size);

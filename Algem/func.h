@@ -6,6 +6,11 @@
 #define MY_UNIVERSITY_C_FUNC_H
 
 int Vectors();
+int Arr_Edge();
 int Matrix_det_gauss();
+int Three_Numbers_Mult();
+int Min_of_three();
+int Ex1_4();
+int TestFileForStudy();
 
 #endif //MY_UNIVERSITY_C_FUNC_H
