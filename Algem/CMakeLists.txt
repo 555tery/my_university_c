@@ -7,4 +7,4 @@ include_directories(.)
 
 add_executable(StartFile.c StartFile.c
         "/Users/555tery/CLionProjects/my_university_c/TestFileForStudy.c"
-        "../C Basic/Tour_5/Ex5_1.c" SLE_solver.c Inverse_Matrix.c)
+        "../C Basic/Tour_5/Ex5_1.c" )

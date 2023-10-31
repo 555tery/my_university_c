@@ -5,7 +5,7 @@
 #include "stdio.h"
 
 int main(){
-    //TestFileForStudy();
+    TestFileForStudy();
     //SLE_solver();
-    Inverse_Matrix();
+    //Inverse_Matrix();
 }
