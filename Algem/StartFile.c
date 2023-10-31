@@ -5,5 +5,6 @@
 #include "stdio.h"
 
 int main(){
-    TestFileForStudy();
+    //TestFileForStudy();
+    SLE_solver();
 }

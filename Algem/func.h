@@ -12,5 +12,6 @@ int Three_Numbers_Mult();
 int Min_of_three();
 int Ex1_4();
 int TestFileForStudy();
+int SLE_solver();
 
 #endif //MY_UNIVERSITY_C_FUNC_H

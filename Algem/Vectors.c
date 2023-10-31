@@ -11,11 +11,13 @@ int Vectors() {
     double res = 0, det;
     scanf("%lf%lf%lf%lf%lf%lf%lf%lf%lf", &a1, &a2, &a3, &b1, &b2, &b3, &c1, &c2, &c3);
     det = a1 * b2 * c3 + c1 * a2 * b3 + b1 * c2 * a3 - a3 * b2 * c1 - a1 * c2 * b3 - a2 * b1 * c3;
+    //если определитьель их матрицы == 0 => они компланарны
     if (det != 0)
         printf("false\n");
     else
         printf("true\n");
-
+    //счиатем попарно векторные произведения/
+    //если вектоорное произведение == 0 => они коллинеарны
     if (a2 * b3 - a3 * b2 == 0 && a3 * b1 - a1 * b3 == 0 && a1 * b2 - a2 * b1 == 0) {
         flag = 1;
         printf("%.2lf %.2lf %.2lf\n", a1, a2, a3);
