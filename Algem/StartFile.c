@@ -6,5 +6,6 @@
 
 int main(){
     //TestFileForStudy();
-    SLE_solver();
+    //SLE_solver();
+    Inverse_Matrix();
 }

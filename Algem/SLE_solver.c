@@ -2,7 +2,7 @@
 // Created by Egor Kapov on 31.10.2023.
 //
 #include "math.h"
-#define N 20
+#define N 200
 #include "stdio.h"
 
 void glavelem(int k, double mas[][N + 1], int n, int otv[]) {
@@ -38,34 +38,35 @@ int SLE_solver(void) {
     double x[N]; //Корни системы
     int otv[N]; //Отвечает за порядок корней
     int i, j, k, n;
+
     //Ввод данных
     do {
-        printf("Введите число уравнений системы: ");
+        //printf("Введите число уравнений системы: ");
         scanf("%d", &n);
         if (N < n)
             printf("Слишком большое число уравнений. Повторите ввод\n");
     } while (N < n);
-    printf("Введите систему:\n");
+    //printf("Введите систему:\n");
     for (i = 0; i < n; i++)
         for (j = 0; j < n + 1; j++)
             scanf("%lf", &mas[i][j]);
     //Вывод введенной системы
-    printf("Система:\n");
+    /*printf("Система:\n");
     for (i = 0; i < n; i++) {
         for (j = 0; j < n + 1; j++)
             printf("%7.2f ", mas[i][j]);
         printf("\n");
-    }
+    }*/
     //Сначала все корни по порядку
     for (i = 0; i < n + 1; i++)
         otv[i] = i;
     //Прямой ход метода Гаусса
     for (k = 0; k < n; k++) { //На какой позиции должен стоять главный элемент
         glavelem(k, mas, n, otv); //Установка главного элемента
-        if (fabs(mas[k][k]) < 0.0001) {
+    /*    if (fabs(mas[k][k]) < 0.0001) {
             printf("Система не имеет единственного решения");
             return (0);
-        }
+        }*/
         for (j = n; j >= k; j--)
             mas[k][j] /= mas[k][k];
         for (i = k + 1; i < n; i++)
@@ -79,16 +80,13 @@ int SLE_solver(void) {
         for (j = i + 1; j < n; j++)
             x[i] -= x[j] * mas[i][j];
     //Вывод результата
-    printf("Ответ:\n");
+    //printf("Ответ:\n");
     for (i = 0; i < n; i++)
         for (j = 0; j < n; j++)
             if (i == otv[j]) { //Расставляем корни по порядку
-                printf("%f\n", x[j]);
+                printf("%.2f ", x[j]);
                 break;
             }
     return (0);
 }
 
-//----------------------------------------------
-//Описание  функции
-//----------------------------------------------
