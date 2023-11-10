@@ -13,5 +13,8 @@ int Min_of_three();
 int Ex1_4();
 int TestFileForStudy();
 int SLE_solver();
+int Ages_and_names();
 int Inverse_Matrix();
+int MinimalDate();
+int OneConnectedList();
 #endif //MY_UNIVERSITY_C_FUNC_H
