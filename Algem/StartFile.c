@@ -7,11 +7,5 @@
 
 
 int main() {
-    Ages_and_names();
-    //MinimalDate();
-    //OneConnectedList();
-    return 0;
-    //TestFileForStudy();
-    //SLE_solver();
-    //Inverse_Matrix();
+    spisok_hvost();
 }

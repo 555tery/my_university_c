@@ -55,5 +55,5 @@ int Ages_and_names() {
     printf("names: long = %d\n", name_stats.cntLong);
     printf("ages: total = %d\n", age_stats.cntTotal);
     printf("ages: adult = %d\n", age_stats.cntAdults);
-    printf("ages: kid = %d", age_stats.cntKids);т
+    printf("ages: kid = %d", age_stats.cntKids);
 }
