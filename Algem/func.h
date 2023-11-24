@@ -9,6 +9,7 @@ int Vectors();
 int spisok_golova();
 int Arr_Edge();
 int spisok_hvost();
+int Ex1_5();
 int Matrix_det_gauss();
 int Three_Numbers_Mult();
 int Min_of_three();

@@ -4,8 +4,9 @@
 #include "func.h"
 #include "stdio.h"
 #include "stdlib.h"
+#include "math.h"
 
 
 int main() {
-    Ex1_4();
+    Ex1_5();
 }
