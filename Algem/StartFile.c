@@ -3,9 +3,9 @@
 //
 #include "func.h"
 #include "stdio.h"
-
+#include "stdlib.h"
 
 
 int main() {
-    spisok_hvost();
+    Ex1_4();
 }
