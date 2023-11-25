@@ -8,5 +8,5 @@
 
 
 int main() {
-    Ex1_5();
+    prosotota();
 }

@@ -8,6 +8,9 @@
 int Vectors();
 int spisok_golova();
 int Arr_Edge();
+int sum_1_to_N();
+int sum_of_even();
+int prosotota();
 int spisok_hvost();
 int Ex1_5();
 int Matrix_det_gauss();
