@@ -8,5 +8,5 @@
 
 
 int main() {
-    prosotota();
+    slovo_tri_bukvi();
 }
