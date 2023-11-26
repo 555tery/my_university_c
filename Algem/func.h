@@ -8,7 +8,9 @@
 int Vectors();
 int spisok_golova();
 int Arr_Edge();
+int I_am_better();
 int sum_1_to_N();
+int Divide_by_15();
 int sum_of_even();
 int prosotota();
 int day_of_week();

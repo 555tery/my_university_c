@@ -8,5 +8,5 @@
 
 
 int main() {
-    slovo_tri_bukvi();
+    Divide_by_15();
 }
