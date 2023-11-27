@@ -8,5 +8,5 @@
 
 
 int main() {
-    Divide_by_15();
+    SLE_solver();
 }

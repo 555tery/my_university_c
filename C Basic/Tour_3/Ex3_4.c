@@ -7,12 +7,12 @@ int Divide_by_15() {
     char a, b;
     int sum = 0;
     a = getchar();
-    a = a-'0';
+    a = a - '0';
     b = getchar();
     sum += a;
     while (b != '.') {
         a = b;
-        a = a-'0';
+        a = a - '0';
         sum += a;
         b = getchar();
 
@@ -21,4 +21,5 @@ int Divide_by_15() {
     if (sum % 3 == 0 && a % 5 == 0)
         printf("YES");
     else printf("NO");
+    return 0;
 }
