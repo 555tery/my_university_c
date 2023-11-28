@@ -6,6 +6,7 @@
 #define MY_UNIVERSITY_C_FUNC_H
 
 int Vectors();
+int alphabet();
 int spisok_golova();
 int Arr_Edge();
 int I_am_better();

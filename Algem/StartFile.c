@@ -8,5 +8,5 @@
 
 
 int main() {
-    SLE_solver();
+    alphabet();
 }

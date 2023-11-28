@@ -2,7 +2,7 @@
 #define N 200
 #include "stdio.h"
 
-int main() {
+int sle_solver() {
     double mas[N][N + 1];
     double x[N];
     int otv[N];
