@@ -9,5 +9,5 @@
 
 int main() {
     //alphabet();
-    colors();
+    difference();
 }
