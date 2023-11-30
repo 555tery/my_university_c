@@ -9,5 +9,7 @@
 
 int main() {
     //alphabet();
-    difference();
+    //difference();
+    //words();
+     binominal_coefficient();
 }

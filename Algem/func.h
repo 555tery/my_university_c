@@ -9,6 +9,8 @@ int Vectors();
 int alphabet();
 int colors();
 int difference();
+int words();
+int binominal_coefficient();
 int spisok_golova();
 int Arr_Edge();
 int I_am_better();
