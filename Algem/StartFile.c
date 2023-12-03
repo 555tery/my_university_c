@@ -8,5 +8,6 @@
 
 
 int main() {
-    japanese_problem();
-}
+    //japanese_problem();
+    strok_saving();
+    }

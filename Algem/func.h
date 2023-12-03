@@ -11,6 +11,7 @@ int alphabet();
 int colors();
 int difference();
 int words();
+int strok_saving();
 int binominal_coefficient();
 int spisok_golova();
 int Arr_Edge();

@@ -1,0 +1,61 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main() {
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    int n, t, k, l, ind = 0, len, q, *len_m;
+    char symbol, **r;
+    scanf("%d", &n);
+    r = (char **)malloc(n * sizeof(char *));
+    len_m = (int *)malloc(n * sizeof(int));
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &t);
+        if (t == 0) {
+            scanf("%d", len_m + ind);
+            r[ind] = (char *)malloc(len_m[ind] + 1);
+            scanf("%s", r[ind]);
+            ind += 1;
+        }
+        if (t == 1) {
+            scanf("%d", &k);
+            free(r[k]);
+        }
+        if (t == 2) {
+            scanf("%d", &k);
+            len = len_m[k];
+            for (int j = 0; j < len; j++)
+                printf("%c", r[k][j]);
+            printf("\n");
+        }
+        if (t == 3) {
+            scanf("%d %c", &k, &symbol);
+            len = len_m[k];
+            q = 0;
+            for (int j = 0; j < len; j++) {
+                if (r[k][j] == symbol)
+                    q += 1;
+            }
+        printf("%d\n", q);
+        }
+    }
+    free(r);
+    free(len_m);
+    return 0;
+}
+
+12
+0 3 aba
+2 0
+3 0 a
+3 0 b
+1 0
+0 6 malloc
+0 5 %d%s%
+2 1
+2 2
+1 1
+3 2 %
+2 2
