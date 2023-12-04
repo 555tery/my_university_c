@@ -9,5 +9,7 @@
 
 int main() {
     //japanese_problem();
-    strok_saving();
+    //strok_saving();
+    symbol_number();
+    //number_experiment();
     }

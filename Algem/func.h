@@ -12,6 +12,8 @@ int colors();
 int difference();
 int words();
 int strok_saving();
+int symbol_number();
+int number_experiment();
 int binominal_coefficient();
 int spisok_golova();
 int Arr_Edge();
