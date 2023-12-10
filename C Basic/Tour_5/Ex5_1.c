@@ -20,16 +20,12 @@ int alphabet() {
                 flag = 1;
                 break;
             }
-        }if (flag == 0){
-            arrr[hod%2]++;
-            break;
         }
         hod++;
         bukva++;
-
-        if (hod == 26){
-            printf("PLAYER 2");
-            return 0;
+        if (flag == 0){
+            arrr[hod%2]++;
+            break;
         }
     }
 

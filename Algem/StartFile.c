@@ -8,9 +8,6 @@
 
 
 int main() {
-    //japanese_problem();
-    //strok_saving();
-    //symbol_number();
-    //number_experiment();
-    code_style();
-    }
+
+    all_inclusions();
+}

@@ -1,9 +1,8 @@
-#include <cstdio>
-
-int main()
-{
- int a,b;
-  scanf ("%d%d",&a,&b);
-   printf ("%d\n",a+b);
-    return 0;
+/*C-style comments can contain
+multiple lines*/ /*or just one*/
+// C++-style comment lines
+int main() {
+  // The below code wont be run
+  //return 1;
+  return 0; //this will be run
 }
