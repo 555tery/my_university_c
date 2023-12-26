@@ -1,27 +1,21 @@
-//
-// Created by Egor Kapov on 05.12.2023.
-//
-#include "stdio.h"
+#include <stdio.h>
 
-void one_cnt(){
-    int max = 1;
-    int num = 0, cnt = 1;
-    scanf("%d", &num);
-    int flag = 1;
-    while (flag){
-        if (num%2 == 1){
-            cnt++;
+int one_cnt()
+{
+    int a, b, count = 0, max = 0;
+    scanf("%d", &a);
+    for (int i = 0; i < 32; i++){
+        b = a & 1;
+        a = a >> 1;
+        if (b){
+            count++;
         }
-        if (num%2 == 0){
-            if (cnt > max)
-                max = cnt;
-            cnt = 1;
+        else {
+            max = max > count ? max : count;
+            count = 0;
         }
-        num >>=1;
-        if (num == 0)
-            flag--;
-
-
     }
+    max = max > count ? max : count;
     printf("%d", max);
+    return 0;
 }

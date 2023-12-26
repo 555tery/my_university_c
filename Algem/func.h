@@ -6,9 +6,11 @@
 #define MY_UNIVERSITY_C_FUNC_H
 
 int Vectors();
+int double_delete();
 int japanese_problem();
 int alphabet();
 int colors();
+int reverse();
 int difference();
 int words();
 int strok_saving();
@@ -17,6 +19,9 @@ void bukovi_counter();
 int symbol_number();
 void one_cnt();
 void all_inclusions();
+int quicksort_bin();
+int bin_sum();
+int qusort();
 void code_style();
 void words_number();
 int number_experiment();
