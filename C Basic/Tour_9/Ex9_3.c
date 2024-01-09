@@ -87,7 +87,7 @@ void tokensFree(Tokens *tokens) {
     free(tokens->arr);
 }
 
-int main() {
+int splitter() {
     Tokens tokens = {0, NULL};
     char str[1000002];
     char delims[5] = ".,;:";

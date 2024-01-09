@@ -14,6 +14,7 @@ int main() {
     //short int b = -1; // 1111 1111 1111 1111
     //short int c = a & b; // 1111 1111 1111 1110
     //printf("%d", c)
-    chess();
     //one_cnt();
+    //chisla();
+    rusi();
 }
