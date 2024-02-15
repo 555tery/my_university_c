@@ -5,6 +5,9 @@
 #ifndef MY_UNIVERSITY_C_FUNC_H
 #define MY_UNIVERSITY_C_FUNC_H
 
+int reverse();
+int signs();
+int assimpot();
 int Vectors();
 int double_delete();
 int japanese_problem();
@@ -24,6 +27,7 @@ int chess();
 int backpack_test();
 int chisla();
 int rusi();
+int prosota2();
 int quicksort_bin();
 int bin_sum();
 int qusort();

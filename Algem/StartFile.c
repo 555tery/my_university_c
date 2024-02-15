@@ -16,5 +16,10 @@ int main() {
     //printf("%d", c)
     //one_cnt();
     //chisla();
-    rusi();
-}
+    //rusi();
+    assimpot();
+//    char arr[8]= "ZZZZZZZZ";
+//    for (int i = 0; i < 8; ++i) {
+//        printf("%c", arr[i]);
+//    }
+    }
