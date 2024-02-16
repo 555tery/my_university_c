@@ -5,6 +5,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "math.h"
+#include "string.h"
 
 
 int main() {
@@ -22,4 +23,5 @@ int main() {
 //    for (int i = 0; i < 8; ++i) {
 //        printf("%c", arr[i]);
 //    }
+//atof
     }
