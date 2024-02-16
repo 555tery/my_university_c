@@ -18,7 +18,8 @@ int main() {
     //one_cnt();
     //chisla();
     //rusi();
-    assimpot();
+    //assimpot();
+    rost_mas();
 //    char arr[8]= "ZZZZZZZZ";
 //    for (int i = 0; i < 8; ++i) {
 //        printf("%c", arr[i]);

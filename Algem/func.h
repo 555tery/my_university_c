@@ -13,6 +13,7 @@ int double_delete();
 int japanese_problem();
 int alphabet();
 int colors();
+int rost_mas();
 int reverse();
 int difference();
 int words();
