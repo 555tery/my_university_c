@@ -2,21 +2,21 @@
 #include <stdlib.h>
 
 
-typedef struct Dict {
+typedef struct Dict{
     int key;
     char value[8];
 } dict;
 
 
-typedef struct Buf {
+typedef struct Buf{
     dict *arr;
     int cnt;
     int cap;
 } buf;
 
 
-void new(buf *a, dict elem) {
-    if (a->cap <= a->cnt) {
+void new(buf *a, dict elem){
+    if (a->cap <= a->cnt){
         a->cap *= 2;
         a->arr = realloc(a->arr, a->cap * sizeof(buf));
     }
@@ -24,23 +24,24 @@ void new(buf *a, dict elem) {
 }
 
 
-int rost_mas() {
-    buf a[1000010]; // создали 10в6 пакетов
-    for (int i = 0; i < 1000010; i++) {
+int rost_mas()
+{
+    buf a[100001];
+    for (int i = 0; i < 100001; i++){
         a[i].cnt = 0;
         a[i].cap = 1;
-        a[i].arr = (dict *) malloc(sizeof(dict));
+        a[i].arr = (dict*) malloc(sizeof(dict));
     }
 
     int n;
     scanf("%d", &n);
     dict elem;
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++){
         scanf("%d%s", &elem.key, elem.value);
         new(&a[elem.key], elem);
     }
-    for (int i = 0; i < 1000010; i++) {
-        for (int j = 0; j < a[i].cnt; j++) {
+    for (int i = 0; i < 100001; i++){
+        for (int j = 0; j < a[i].cnt; j++){
             printf("%d %s\n", (a[i].arr)[j].key, (a[i].arr)[j].value);
         }
     }
