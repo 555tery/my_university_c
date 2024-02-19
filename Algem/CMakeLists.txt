@@ -7,4 +7,5 @@ include_directories(.)
 
 add_executable(StartFile.c StartFile.c
         "/Users/555tery/CLionProjects/my_university_c/TestFileForStudy.c"
-        "../C Basic/Tour_5/Ex5_1.c"  "../C Basic 2 sem/Tour_1/Ex1_2.c")
+        "../C Basic/Tour_5/Ex5_1.c"  "../C Basic 2 sem/Tour_1/Ex1_2.c"
+        "../C Basic 2 sem/Tour_2/Ex2_1.c")

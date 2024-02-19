@@ -19,10 +19,11 @@ int main() {
     //chisla();
     //rusi();
     //assimpot();
-    rost_mas();
+//    rost_mas();
+    inf_post();
 //    char arr[8]= "ZZZZZZZZ";
 //    for (int i = 0; i < 8; ++i) {
 //        printf("%c", arr[i]);
 //    }
 //atof
-    }
+}

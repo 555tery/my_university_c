@@ -2,48 +2,53 @@
 #include <stdlib.h>
 
 
-typedef struct Dict{
+typedef struct Dict {
     int key;
     char value[8];
-} dict;
+} dictionary;
 
 
-typedef struct Buf{
-    dict *arr;
-    int cnt;
-    int cap;
-} buf;
+typedef struct Buf {
+    dictionary *arr;
+    int current;
+    int capacity;
+} buffer;
 
 
-void new(buf *a, dict elem){
-    if (a->cap <= a->cnt){
-        a->cap *= 2;
-        a->arr = realloc(a->arr, a->cap * sizeof(buf));
+void new(buffer *a, dictionary elem) {
+    if (a->capacity <= a->current) {
+        a->capacity += 1;
+        a->arr = realloc(a->arr, a->capacity * sizeof(buffer));
     }
-    a->arr[(a->cnt)++] = elem;
+    a->arr[(a->current)++] = elem;
 }
 
 
-int rost_mas()
-{
-    buf a[100001];
-    for (int i = 0; i < 100001; i++){
-        a[i].cnt = 0;
-        a[i].cap = 1;
-        a[i].arr = (dict*) malloc(sizeof(dict));
+int rost_mas() {
+    buffer *a;
+    a = (buffer *) malloc(sizeof(buffer) * 1000010);
+    for (int i = 0; i < 1000010; i++) {
+        a[i].current = 0;
+        a[i].capacity = 1;
+        a[i].arr = (dictionary *) malloc(sizeof(dictionary));
     }
 
     int n;
     scanf("%d", &n);
-    dict elem;
-    for (int i = 0; i < n; i++){
+    dictionary elem;
+    for (int i = 0; i < n; i++) {
         scanf("%d%s", &elem.key, elem.value);
         new(&a[elem.key], elem);
     }
-    for (int i = 0; i < 100001; i++){
-        for (int j = 0; j < a[i].cnt; j++){
+    for (int i = 0; i < 1000010; i++) {
+        for (int j = 0; j < a[i].current; j++) {
             printf("%d %s\n", (a[i].arr)[j].key, (a[i].arr)[j].value);
         }
     }
+    for (int i = 0; i < 1000010; ++i) {
+        free(a[i].arr);
+    }
+    free(a);
     return 0;
+
 }

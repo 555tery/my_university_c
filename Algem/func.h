@@ -4,7 +4,8 @@
 
 #ifndef MY_UNIVERSITY_C_FUNC_H
 #define MY_UNIVERSITY_C_FUNC_H
-int rost_mas();
+//int rost_mas();
+int inf_post();
 //int reverse();
 //int signs();
 //int assimpot();
