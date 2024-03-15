@@ -21,12 +21,14 @@ int ab(int N) {
 }
 
 int prosota2() {
-    int a = 0;
+    int a = 0, cnt = 0;
     scanf("%d", &a);
     for (int i = 2; i  <= a; ++i) {
-        if (ab(i))
+        if (ab(i)) {
             printf("%d ", i);
+            cnt++;
+        }
     }
-
+    printf("%d", cnt);
     return 0;
 }

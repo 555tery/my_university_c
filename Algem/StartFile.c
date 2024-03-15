@@ -20,8 +20,9 @@ int main() {
     //rusi();
     //assimpot();
 //    rost_mas();
-    inf_post();
-//    char arr[8]= "ZZZZZZZZ";
+   // inf_post();
+    //prosota2();
+    TestFileForStudy();//    char arr[8]= "ZZZZZZZZ";
 //    for (int i = 0; i < 8; ++i) {
 //        printf("%c", arr[i]);
 //    }

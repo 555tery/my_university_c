@@ -7,15 +7,13 @@
 int ab(int N) {
     for (int i = 2; i * i <= N; ++i) {
         if (N % i == 0) {
-            //printf("NO");
             return 0;
         }
     }
-    // printf("YES");
     return 1;
 }
 
-int TestFileForStudy() {
+int Prost_matrix() {
 //    freopen("input.txt", "r", stdin);
 //    freopen("output.txt", "w", stdout);
     int cnt = 0;
