@@ -16,7 +16,7 @@ int inf_post();
 //int colors();
 int arctg_taylor();
 int reverse();
-void matrix_qsort();
+void matrix_heapsort();
 //int difference();
 //int words();
 //int strok_saving();

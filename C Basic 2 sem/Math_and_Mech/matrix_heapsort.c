@@ -2,6 +2,8 @@
 // Created by Egor Kapov on 05.04.2024.
 //
 #include "stdio.h"
+#include "math.h"
+#include "iso646.h"
 
 typedef struct matrix_plus_det {
     int matrix[65][65];
@@ -9,30 +11,32 @@ typedef struct matrix_plus_det {
     int size;
 } matrix_plus_det;
 
+void swap(matrix_plus_det a[], matrix_plus_det b[]) {
+    matrix_plus_det temp = *a;
+    *a = *b;
+    *b = temp;
+}
 
-void quicksort(matrix_plus_det *arr, int n) {
-    int i = 0, j = n - 1, mid = arr[n / 2].det;
-    matrix_plus_det tmp;
-    while (i <= j) {
-        while (arr[i].det < mid) {
-            i++;
-        }
-        while (arr[j].det > mid) {
-            j--;
-        }
-        if (i <= j) {
-            tmp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = tmp;
-            i++;
-            j--;
-        }
+void heapify(matrix_plus_det arr[], int n, int i) {
+    int largest = i;
+    int l = 2 * i + 1;
+    int r = 2 * i + 2;
+    if (l < n and arr[l].det > arr[largest].det)
+        largest = l;
+    if (r < n and arr[r].det > arr[largest].det)
+        largest = r;
+    if (largest != i) {
+        swap(&arr[i], &arr[largest]);
+        heapify(arr, n, largest);
     }
-    if (j > 0) {
-        quicksort(arr, j + 1); // слева
-    }
-    if (i < n) {
-        quicksort(&arr[i], n - i); // справа
+}
+
+void heapsort(matrix_plus_det *arr, int n) {
+    for (int i = n / 2 - 1; i >= 0; i--)
+        heapify(arr, n, i);
+    for (int i = n - 1; i >= 0; i--) {
+        swap(&arr[0], &arr[i]);
+        heapify(arr, i, 0);
     }
 }
 
@@ -74,8 +78,7 @@ void printer(matrix_plus_det a) {
     }
 }
 
-void matrix_qsort() {
-
+void matrix_heapsort() {
     int num_of_matrix = 0;
     scanf("%d", &num_of_matrix);
     matrix_plus_det arr[100];
@@ -88,7 +91,7 @@ void matrix_qsort() {
         }
         arr[i].det = determ(arr[i].matrix, arr[i].size);
     }
-    quicksort(arr, num_of_matrix);
+    heapsort(arr, num_of_matrix);
     for (int i = 0; i < num_of_matrix; ++i) {
         printer(arr[i]);
     }
