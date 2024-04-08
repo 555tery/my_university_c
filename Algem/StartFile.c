@@ -4,66 +4,41 @@
 #include "stdlib.h"
 #include "math.h"
 #include "iso646.h"
+#include "func.h"
 
-typedef struct vector {
-    int vector[65];
-    int norm;
-    int size;
-} vector;
-
-int norm_cnt(int* arr, int len) {
-    int res =0;
-    for (int i = 0; i < len; ++i) {
-        res += pow(arr[i], 2);
-    }
-    return (int) sqrt(res);
-}
-
-void mergeSort(vector *a, int l, int r) {
-    if (l == r) return;
-    int mid = (l + r) / 2;
-    mergeSort(a, l, mid);
-    mergeSort(a, mid + 1, r);
-    int i = l;
-    int j = mid + 1;
-    vector *tmp = (vector *) malloc(r * sizeof(vector));
-    for (int step = 0; step < r - l + 1; step++) {
-        if ((j > r) or ((i <= mid) and (a[i].norm < a[j].norm))) {
-            tmp[step] = a[i];
-            i++;
-        } else {
-            tmp[step] = a[j];
-            j++;
-        }
-    }
-    for (int step = 0; step < r - l + 1; step++)
-        a[l + step] = tmp[step];
-    free(tmp);
-}
-
-void printer(vector a) {
-    for (int i = 0; i < a.size; ++i) {
-        printf("%d ", a.vector[i]);
-    }
-    printf("\n");
-}
+typedef struct versh{
+    int dist;
+    struct versh *out_contacts[200010];
+    int cnt;
+} versh;
 
 int main() {
-//    freopen("input.txt", "r", stdin);
-//    freopen("output.txt", "w", stdout);
-    int num_of_vectors = 0;
-    scanf("%d", &num_of_vectors);
-    vector arr[100];
-    for (int i = 0; i < num_of_vectors; ++i) {
-        scanf("%d", &arr[i].size);
-        for (int j = 0; j < arr[i].size; ++j) {
-            scanf("%d", &arr[i].vector[j]);
+    int num_of_dug, num_of_versh, in, out;
+    scanf("%d %d", &num_of_versh, &num_of_dug);
+    versh *graph = (versh *) malloc(sizeof(versh) * (num_of_versh + 1));
+
+    for (int i = 1; i < num_of_versh+1; ++i) {
+        graph[i].cnt = 0;
+        graph[i].dist = 10000000;
+    }
+
+    graph[1].dist = 0;
+    for (int i = 0; i < num_of_dug; ++i) {
+        scanf("%d %d", &out, &in);
+        graph[out].out_contacts[graph[out].cnt++] = &graph[in];
+    }
+    for (int i = 1; i < num_of_versh+1; ++i) {
+        for (int j = 0; j < graph[i].cnt; ++j) {
+            if (graph[i].out_contacts[j]->dist> graph[i].dist+1)
+            graph[i].out_contacts[j]->dist= graph[i].dist+1;
         }
-        arr[i].norm = norm_cnt(arr[i].vector, arr[i].size);
     }
-    mergeSort(arr, 0, num_of_vectors-1);
-    for (int i = 0; i < num_of_vectors; ++i) {
-        printer(arr[i]);
+    for (int i = 1; i < num_of_versh+1; ++i) {
+        if(graph[i].dist == 10000000){
+            printf("-1\n");
+        }
+        else{
+            printf("%d\n", graph[i].dist);
+        }
     }
-    return 0;
 }
