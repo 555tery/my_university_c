@@ -1,44 +1,46 @@
 
-
 #include "stdio.h"
 #include "stdlib.h"
-#include "math.h"
 #include "iso646.h"
-#include "func.h"
 
-typedef struct versh{
-    int dist;
-    struct versh *out_contacts[200010];
-    int cnt;
-} versh;
+typedef struct spisok {
+    int value;
+    struct spisok *next;
+    struct spisok *prev;
+} spisok;
+
+void spisok_builder(spisok *head) {
+    int znachenie = 0;
+    spisok *element;
+    spisok *tmp;
+    scanf("%d", &head->value);
+    head->next = NULL;
+    head->prev = NULL;
+    tmp = head;
+    while (scanf("%d", &znachenie) != EOF) {
+        element = (spisok *) malloc(sizeof(spisok));
+        element->value = znachenie;
+        element->next = NULL;
+        tmp->next = element;
+        element->prev = tmp;
+        tmp = element;
+    }
+    tmp->next = head;
+    head->prev = tmp;
+}
 
 int main() {
-    int num_of_dug, num_of_versh, in, out;
-    scanf("%d %d", &num_of_versh, &num_of_dug);
-    versh *graph = (versh *) malloc(sizeof(versh) * (num_of_versh + 1));
-
-    for (int i = 1; i < num_of_versh+1; ++i) {
-        graph[i].cnt = 0;
-        graph[i].dist = 10000000;
-    }
-
-    graph[1].dist = 0;
-    for (int i = 0; i < num_of_dug; ++i) {
-        scanf("%d %d", &out, &in);
-        graph[out].out_contacts[graph[out].cnt++] = &graph[in];
-    }
-    for (int i = 1; i < num_of_versh+1; ++i) {
-        for (int j = 0; j < graph[i].cnt; ++j) {
-            if (graph[i].out_contacts[j]->dist> graph[i].dist+1)
-            graph[i].out_contacts[j]->dist= graph[i].dist+1;
-        }
-    }
-    for (int i = 1; i < num_of_versh+1; ++i) {
-        if(graph[i].dist == 10000000){
-            printf("-1\n");
-        }
-        else{
-            printf("%d\n", graph[i].dist);
-        }
+    freopen("/Users/555tery/CLionProjects/my_university_c/Algem/input.txt", "r", stdin);
+    freopen("/Users/555tery/CLionProjects/my_university_c/Algem/output.txt", "w", stdout);
+    spisok *head;
+    int cnt = 1;
+    head = (spisok *) malloc(sizeof(spisok));
+    spisok *element;
+    spisok_builder(head);
+    for (*head; head != NULL and cnt < 40;) {
+        printf("%d ", head->value);
+        element = head;
+        head = head->prev;
+        cnt++;
     }
 }
