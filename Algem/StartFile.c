@@ -10,23 +10,35 @@ typedef struct spisok {
     struct spisok *prev;
 } spisok;
 
-void spisok_builder(spisok *head) {
+spisok *spisok_builder(spisok *head) {
     spisok *element;
     spisok *tmp;
-    head->next = NULL;
-    head->prev = NULL;
-    tmp = head;
-    head->value = 1;
-    for (int znachenie = 2; znachenie <= num_of_jews; ++znachenie) {
+    int znachenie;
+    scanf("%d", &head->value);
+    while (scanf("%d", &znachenie) != EOF) {
+        tmp = head;
         element = (spisok *) malloc(sizeof(spisok));
-        element->value = znachenie;
         element->next = NULL;
-        tmp->next = element;
-        element->prev = tmp;
-        tmp = element;
+        element->prev = NULL;
+        element->value = znachenie;
+        while (1)
+            if (element->value > head->value) {
+                head->prev = element;
+                element->next = head;
+                head = element;
+                break;
+            } else if (tmp->next == NULL) {
+                element->prev = tmp;
+                tmp->next = element;
+                break;
+            }else if (tmp->value >= element->value and tmp->next->value <= element->value  ) {
+                element->next = tmp->next;
+                tmp->next = element;
+                break;
+            }  else tmp = tmp->next;
+
     }
-    tmp->next = head;
-    head->prev = tmp;
+    return head;
 }
 
 void deleter(spisok *elem) {
@@ -43,22 +55,22 @@ void deleter(spisok *elem) {
 int main() {
     freopen("/Users/555tery/CLionProjects/my_university_c/Algem/input.txt", "r", stdin);
     freopen("/Users/555tery/CLionProjects/my_university_c/Algem/output.txt", "w", stdout);
-    spisok *head;
+    spisok *head, *tmp;
     int cnt = 1;
+
     scanf("%d %d", &num_of_jews, &every_n_jew);
     head = (spisok *) malloc(sizeof(spisok));
-    spisok *element;
-    spisok_builder(head);
-    for (*head; head->next != NULL;) {
-//        printf("%d ", head->value);
-        element = head;
+    head->next = NULL;
+    head->prev = NULL;
+    head = spisok_builder(head);
+    while (1) {
+        printf("%d ", head->value);
+        if (head->next == NULL)
+            break;
+        tmp = head;
         head = head->next;
-        if (cnt % every_n_jew == 0)
-            deleter(head->prev);
-//        element->next = NULL;
         cnt++;
-
+        free(tmp);
     }
-    printf("%d", head->value);
     free(head);
 }
